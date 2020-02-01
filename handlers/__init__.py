@@ -11,7 +11,7 @@ if not __name__.endswith("__init__"):
         if extension != ".py":
             continue
 
-        mod = import_module(".{0}".format(name), __name__)
+        mod = import_module("{0}.{1}".format(__name__, name))
         route = getattr(mod, "ROUTE", None)
 
         if route is not None and isinstance(route, tuple):
